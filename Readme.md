@@ -22,7 +22,9 @@ The application uses a decoupled microservices architecture:
 [Mobile Client (APK)] ---> (HTTPS REST) ---> [Hugging Face Backend (Node.js/Python)]
                                                      |
                                             [TensorFlow & XGBoost]
-🛠️ Tech Stack
+
+```
+## 🛠️ Tech Stack
 AI & Backend
 Runtime: Node.js, Express, Python 3.11
 
@@ -37,7 +39,7 @@ Networking: Axios, REST API
 
 Build Tool: EAS (Expo Application Services)
 
-📥 Prerequisites & Dependencies
+## 📥 Prerequisites & Dependencies
 Prerequisites
 Before installing, ensure you have the following installed on your machine:
 
@@ -47,6 +49,7 @@ Python (v3.11)
 
 Git and EAS CLI (npm install -g eas-cli)
 
+```text
 Backend Dependencies (requirements.txt for Python)
 Plaintext
 tf-keras
@@ -60,7 +63,11 @@ dill
 scikit-learn
 scipy
 pandas
+
+```
+
 Backend Dependencies (package.json for Node.js)
+```text
 JSON
 {
   "dependencies": {
@@ -70,9 +77,14 @@ JSON
     "multer": "^1.4.5-lts.1"
   }
 }
+```
+
+```text
 Frontend Dependencies (ScanAI Packages)
 Bash
 npx expo install axios expo-image-picker expo-status-bar react-native-safe-area-context @react-navigation/native @react-navigation/stack
+```
+
 🚀 Getting Started and Installation
 1. Forking and Cloning the Repository
 To fork the project:
@@ -83,11 +95,13 @@ Click the Fork button in the top right corner.
 
 Clone your forked repository to your local machine:
 
-Bash
+```text
 git clone [https://github.com/your-username/MediScan-AI.git](https://github.com/your-username/MediScan-AI.git)
 cd MediScan-AI
+```
+
 2. Setting Up the Backend
-Bash
+```text
 # Navigate to the backend directory
 cd ScanAI-Backend
 
@@ -104,10 +118,12 @@ pip install -r requirements.txt
 
 # Run the backend
 node server.js
+```
+
 3. Setting Up the Frontend
 Open a separate terminal window for the frontend application:
 
-Bash
+```text
 # Navigate to the frontend directory
 cd ../ScanAI
 
@@ -116,8 +132,7 @@ npm install
 
 # Start the Expo development server
 npx expo start
-Press a to run on an Android emulator, or scan the QR code using the Expo Go app on your physical device.
-
+```
 🌐 Cloud Deployment Configuration
 Hugging Face Space (Backend)
 The backend uses a Dockerfile exposed to port 7860. To point your mobile application to your deployed cloud backend, update the API_URL variable in DashboardScreen.js:
@@ -127,21 +142,11 @@ const API_URL = "[https://your-hugging-face-space.hf.space/api/upload-scan](http
 Mobile App Setup (EAS Build)
 To build a standalone Android APK for sideloading:
 
-Bash
+```text
 # Log into your Expo account
 eas login
 
 # Build the binary for Android
 eas build -p android --profile preview
-🤝 Contribution Guidelines
-We welcome contributions to MediScan AI:
+```
 
-Fork the repository.
-
-Create a feature branch (git checkout -b feature/AmazingFeature).
-
-Commit your changes (git commit -m 'feat: add some AmazingFeature').
-
-Push to the branch (git push origin feature/AmazingFeature).
-
-Open a Pull Request.
